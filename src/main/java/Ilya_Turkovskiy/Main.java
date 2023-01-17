@@ -38,12 +38,12 @@ public class Main {
             Thread thread = new Thread(logic);
             thread.start();
             threads.add(thread);
-            for (Thread threadMain : threads) {
-                threadMain.join();
-            }
-            long endTs = System.currentTimeMillis(); // end time
-            System.out.println("Time: " + (endTs - startTs) + "ms");
         }
+        for (Thread threadMain : threads) {
+            threadMain.join();
+        }
+        long endTs = System.currentTimeMillis(); // end time
+        System.out.println("Time: " + (endTs - startTs) + "ms");
     }
 
     public static String generateText(String letters, int length) {
